@@ -31,11 +31,12 @@ def substr_count(string):
             #     substr_hash.append(subs_hash)
             #     print(f'{substr=}, {substr_hash=}')
 
-            substr_hash.append(sha1(string[pos_1:pos_2].encode("utf-8")).hexdigest())
+            # substr_hash.append(sha1(string[pos_1:pos_2].encode("utf-8")).hexdigest())
+            substr_hash.append(hash(string[pos_1:pos_2]))
             # print(f'{substr_hash=}')
 
-    # вычитаем из длины множества уникальных эдементов единицу вместо того,
-    # чтобы проверять каждую подстроку if'ом, не является ли она строкой целиком:
+    # вычитаем из длины множества уникальных эдементов единицу (вместо того,
+    # чтобы проверять каждую подстроку if'ом, не является ли она строкой целиком):
 
     return len(set(substr_hash)) - 1
 
